@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Copy Text Example</title>
+</head>
+<body>
+  <div class="modal-body" style="color: #000000;">
+    <input type="text" id="textToCopy1" value="0001.613C.21A6" hidden>
+    MAC Address > 0001.613C.21A6
+
+    <i class="ri-file-copy-line" onclick="copyText('textToCopy1')">hdg</i>
+  </div>
+
+  <script>
+    function copyText(inputId) {
+      var inputElement = document.getElementById(inputId);
+      inputElement.removeAttribute("hidden"); // Temporarily show the input to allow selection
+      inputElement.select();
+      document.execCommand("copy");
+      inputElement.setAttribute("hidden", true); // Hide the input again
+
+      // Alert the user (optional)
+      alert("Text copied: " + inputElement.value);
+    }
+  </script>
+</body>
+</html>
